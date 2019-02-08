@@ -100,7 +100,7 @@ $L2:
 
 	move	$2,$0
 	move	$sp,$fp
-	lw	$fp,76($sp)
+	lw	$fp,76($sp)		#load word present at 19 address away from sp into fp
 	addiu	$sp,$sp,80		#add immediately constant 80 to sp and and store it in sp
 	j	$31
 	nop
