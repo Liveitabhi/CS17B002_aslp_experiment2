@@ -191,7 +191,7 @@ $L12:
 $L10:
 	move	$2,$0
 	move	$sp,$fp
-	lw	$fp,44($sp)
+	lw	$fp,44($sp)		#load word present at 19 address away from sp into fp
 	addiu	$sp,$sp,48		#add immediately constant 48 to sp and and store it in sp
 	j	$31
 	nop
