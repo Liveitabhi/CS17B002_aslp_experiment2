@@ -42,14 +42,14 @@ main:
 	.set	noreorder
 	.cpload	$25
 	.set	nomacro
-	addiu	$sp,$sp,-152
+	addiu	$sp,$sp,-152		#add immediately constant -152 to sp and and store it in sp
 	sw	$31,148($sp)
-	sw	$fp,144($sp)
-	move	$fp,$sp
+	sw	$fp,144($sp)		#store word present at 38 address away from sp into fp
+	move	$fp,$sp			#move the data from sp to fp
 	.cprestore	16
 	movz	$31,$31,$0
-	sw	$4,152($fp)
-	sw	$5,156($fp)
+	sw	$4,152($fp)		#store word present at 38 address away from fp into 4
+	sw	$5,156($fp)		#store word present at 39 address away from fp into 5
 	lw	$2,%got($LC0)($28)
 	addiu	$3,$fp,32
 	addiu	$2,$2,%lo($LC0)
@@ -154,8 +154,8 @@ $L2:
 	move	$2,$0
 	move	$sp,$fp
 	lw	$31,148($sp)
-	lw	$fp,144($sp)
-	addiu	$sp,$sp,152
+	lw	$fp,144($sp)		#store word present at 38 address away from sp into fp
+	addiu	$sp,$sp,152		#add immediately constant 152 to sp and and store it in sp
 	j	$31
 	nop
 
