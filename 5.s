@@ -154,7 +154,7 @@ $L2:
 	move	$2,$0
 	move	$sp,$fp
 	lw	$31,148($sp)
-	lw	$fp,144($sp)		#store word present at 38 address away from sp into fp
+	lw	$fp,144($sp)		#load word present at 38 address away from sp into fp
 	addiu	$sp,$sp,152		#add immediately constant 152 to sp and and store it in sp
 	j	$31
 	nop
