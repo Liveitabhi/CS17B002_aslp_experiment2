@@ -18,9 +18,9 @@ main:
 	.fmask	0x00000000,0
 	.set	noreorder
 	.set	nomacro
-	addiu	$sp,$sp,-48
-	sw	$fp,44($sp)
-	move	$fp,$sp
+	addiu	$sp,$sp,-48		#add immediately constant -48 to sp and and store it in sp
+	sw	$fp,44($sp)		#store word present at 11 address away from sp into fp
+	move	$fp,$sp			#move the data from sp to fp
 	li	$2,55			# 0x37
 	sw	$2,8($fp)
 	movz	$31,$31,$0
@@ -192,7 +192,7 @@ $L10:
 	move	$2,$0
 	move	$sp,$fp
 	lw	$fp,44($sp)
-	addiu	$sp,$sp,48
+	addiu	$sp,$sp,48		#add immediately constant 48 to sp and and store it in sp
 	j	$31
 	nop
 
